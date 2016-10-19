@@ -1,0 +1,32 @@
+/*
+XS input groups in Bootstrap
+taken from : http://stackoverflow.com/questions/22920589/bootstrap-3-input-xs-smaller-than-sm*/
+
+.input-group-xs>.form-control,
+.input-group-xs>.input-group-addon,
+.input-group-xs>.input-group-btn>.btn {
+    height: 22px;
+    /*padding: 0 5px;*/
+    /*Padding:  https://coderwall.com/p/xpahmg/bootstrap-3-input-xs-since-it-doesn-t-exists*/
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.well{
+	/*background-image: linear-gradient(to bottom,#a94442 0,#f5f5f5 100%);*/
+}
+/* Custom vertical-align  */
+.vertical-align {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.my-label {
+	text-align:right;
+}
+
+.form-horizontal .label.text-right{
+    text-align: left;
+      background-color:#ffa;
+}

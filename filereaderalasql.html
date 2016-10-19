@@ -1,0 +1,55 @@
+<!-- Taken from:
+
+ http://alasql.org/demo/008file/
+
+https://github.com/agershun/alasql/wiki/How%20to%20upload%20and%20parse%20CSV%20file%20from%20server%20and%20from%20desktop
+ 
+ -->
+<script src="http://cdn.jsdelivr.net/alasql/latest/alasql.min.js"></script>
+<!-- <script src="../../console/xlsx.core.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js"></script>
+<script src="../../console/Blob.js"></script>
+<h1>File load and save</h1>
+<p>Upload file here</p>
+<input id="readfile" type="file" onchange="loadFile(event)"/>
+<p>Save file here:</p>
+<button onclick="saveFile()">Save file</button>
+<div id="res"></div>
+<script>
+
+var data;
+
+function loadFile(event) {
+//  console.log('loadFile');
+  alasql('SELECT * FROM FILE(?,{headers:true})',[event],function(res){
+    data = res;
+    document.getElementById("res").textContent = JSON.stringify(res);
+  });
+}
+
+function saveFile() {
+  console.log('saveFile');
+  alasql('SELECT * INTO XLSX("myfile.xlsx",{headers:true}) FROM ?',[data]);
+}
+
+// function uploadFile(event,cb) {
+//  var files = event.target.files;
+//  var reader = new FileReader();
+//  var name = files[0].name;
+//  reader.onload = function(e) {
+//    var data = e.target.result;
+//    cb(data);
+//  };
+//  reader.readAsBinaryString(files[0]);  
+// };
+
+    // if(name.substr(-5).toLowerCase() == '.xlsx') {
+    //  workbook = XLSX.read(data, {type: 'binary'});
+    // } else if(name.substr(-4).toLowerCase() == '.xls') {
+    //  workbook = XLS.read(data, {type: 'binary'});
+    // } else {
+    //  alertify.error('Неправильный формат файла. Допустимые форматы: xlsx и xls');
+    //  return;
+    // }
+
+</script>
