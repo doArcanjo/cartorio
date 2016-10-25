@@ -23,7 +23,7 @@ export function loadBaptismsLocal({commit},payload){
     setTimeout(() => {
         console.log('@actions!  loadBaptismsLocal! Payload:',payload)
       commit('SETBAPTISMS',payload.data)
-      commit('SAVE_TO_LOCAL_STORAGE',{save: 'baptisms',data:payload.data})
+      // commit('SAVE_TO_LOCAL_STORAGE',{save: 'baptisms',data:payload.data})
     }, 200)
 }
 

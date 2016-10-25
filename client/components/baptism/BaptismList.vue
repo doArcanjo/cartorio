@@ -3,7 +3,7 @@
 
   <div @click="$store.dispatch('loadBaptismsLocalDummy')">Carregar Baptismos</div>
 <div>
-<h2>LAnguage {{localStorage.lang}}</h2>  
+<h2>Language {{localStorage.lang}}</h2>  
 <h2 v-if='hasBaptisms'>Has Baptisms</h2>  
 <h2 v-else>There are no Baptisms</h2>  
 <h1>File load and save</h1>
@@ -70,10 +70,11 @@ import Modal from '../layout/Modal'
 export default{
 	name: 'BaptismListComponent',
   created: function() {
-      console.log('this.localStorage.lang ',this.localStorage.lang )
-      this.localStorage.lang = "other value"; 
-      // will react on the view and on real localStorage.
-      console.log('this.localStorage.lang ',this.localStorage.lang )
+    // if usage needed install vue-reactivestorage
+      // console.log('this.localStorage.lang ',this.localStorage.lang )
+      // this.localStorage.lang = "other value"; 
+      // // will react on the view and on real localStorage.
+      // console.log('this.localStorage.lang ',this.localStorage.lang )
   },
 	components: {Modal},
   methods:{
@@ -95,8 +96,8 @@ export default{
 
           vm.fileinput = reader.result;
           // console.log('data:',vm.fileinput);
+          //this.gogo()
           this.LoadBaptisms({data:vm.fileinput})
-          this.localStorage.baptisms = vm.fileinput;
         }
         reader.readAsText(file);
     },

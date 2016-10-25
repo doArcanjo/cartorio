@@ -5,14 +5,7 @@ import Counter from './modules/counter'
 import pluginsLocal from './plugins'
 import {SAVE_TO_LOCAL_STORAGE,BAPTISMS_STORAGE_KEY} from './mutation-types'
 import createPersistedState from 'vuex-persistedstate'
-import reactiveStorage from "vue-reactivestorage";
 
-Vue.use(reactiveStorage, [
-  "baptisms",
-    "lang",
-    "name",
-    "foo"
-]);
 Vue.use(Vuex)
 
 const mutations = {

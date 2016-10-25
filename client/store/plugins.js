@@ -14,6 +14,7 @@ const localStoragePlugin = store => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
   })
 }
+
 // const localStoragePlugin2 = store => {
 //   store.subscribe((mutation, state) => {
 //     console.log("Had Mutation in localStoragePlugin2", mutation)
@@ -29,4 +30,4 @@ const localStoragePlugin = store => {
 
 export default process.env.NODE_ENV !== 'production'
   ? [createLogger(),localStoragePlugin]//, localStoragePlugin2]
-  : [localStoragePlugin,localStoragePlugin2]
+  : [localStoragePlugin]//,localStoragePlugin2]

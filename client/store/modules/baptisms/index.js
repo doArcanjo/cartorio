@@ -5,7 +5,7 @@ var BaptismsJson = require ('../../../assets/data/baptismos2006.json');
 
 console.log('In storage',localStorage.getItem(BAPTISMS_STORAGE_KEY))
 const state = {
-    list : JSON.parse(localStorage.getItem(BAPTISMS_STORAGE_KEY) || '[]')||[],
+    list : [],//JSON.parse(localStorage.getItem(BAPTISMS_STORAGE_KEY) || '[]')||[],
     selected : {}
 }
 
