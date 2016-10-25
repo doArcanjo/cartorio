@@ -3,8 +3,18 @@ export function getBaptisms(state){
     return state.list;
 }
 
-export function getBaptism(state,id){
-	console.log("GEEEEEEEEETTTTTT BAPTISM:", id)
+export function getBaptismsLocalStorage(state){
+    return JSON.parse(localStorage.getItem('baptisms'));
+}
+
+// The 3rd argument of a getter is the rootState
+//?check On Root state we have access to $route.params.id through "vuex-router-sync"
+export function getBaptism(state,getters,rootState){
+	console.log("GEEEEEEEEETTTTTT BAPTISM:",rootState.route)
+	console.log("GEEEEEEEEETTTTTT BAPTISM route:", this)
+	// console.log("GEEEEEEEEETTTTTT BAPTISM route2:", this.route)
+	console.log("GEEEEEEBAPTISM state:", state.baptisms)
+	// this.$route.params.id
     return state.list[1]||{};
 }
 

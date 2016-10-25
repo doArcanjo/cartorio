@@ -46,7 +46,6 @@
             console.log("Loaded compiled")
         },
         data()  {
-            console.log("Loaded")
             return {};
         },
         props:{

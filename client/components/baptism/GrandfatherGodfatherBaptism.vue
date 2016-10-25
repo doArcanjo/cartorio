@@ -37,15 +37,14 @@
 			console.log("Loaded compiled")
 		},
 		data()	{
-			console.log("Loaded")
 			return {};
 		},
 		methods:{
-		saveBaptismData(){
-			console.log("SingleBaptismData.avo_paterno:",this.SingleBaptismData.avo_paterno)
-			console.log("SingleBaptismData.avo_paterna:",this.SingleBaptismData.avo_paterna)
-		}
-	},
+			saveBaptismData(){
+				console.log("SingleBaptismData.avo_paterno:",this.SingleBaptismData.avo_paterno)
+				console.log("SingleBaptismData.avo_paterna:",this.SingleBaptismData.avo_paterna)
+			}
+		},
 		props:{
 			comment: Object,
 			'message':String,

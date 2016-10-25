@@ -1,0 +1,21 @@
+{
+  "name": "cartorio",
+  "description": "Cartorio made with vue.js",
+  "main": "client/index.js",
+  "authors": [
+    "Paroquia Costa Caparica PC 1 <paroquialocal@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/doArcanjo/cartorio",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "js-xlsx": "0.7.5"
+  }
+}

@@ -23,6 +23,8 @@ module.exports = {
     }
   },
   module: {
+    /*added for js-xlsx*/
+    noParse: [/jszip.js$/],
     loaders: [
       {
         test: /\.vue$/,
@@ -55,6 +57,7 @@ module.exports = {
     postcss: config.postcss
   },
   plugins: [
+    // new IgnorePlugin(/cptable/),
     new HtmlWebpackPlugin({
       title: config.title,
       template: __dirname + '/index.html',
@@ -62,8 +65,24 @@ module.exports = {
     })
 
     //alasql + vertx
-    ,new IgnorePlugin(/(^fs$|cptable|vertx|jszip|xlsx|xls|^es6-promise$|^net$|^tls$|^forever-agent$|^tough-cookie$|cpexcel|^path$)/)
-  
-  ],
+    // ,new IgnorePlugin(/(^fs$|cptable|vertx|jszip|xlsx|xls|^es6-promise$|^net$|^tls$|^forever-agent$|^tough-cookie$|^path$)/)
+   // ,new IgnorePlugin(/(^fs$|^es6-promise$|^net$|^tls$|^forever-agent$|^tough-cookie$|^path$)/)
+    // ,new IgnorePlugin(/(^fs$|cptable|jszip|xlsx|xls|^es6-promise$|^net$|^tls$|^forever-agent$|^tough-cookie$|cpexcel|^path$)/)
+    ],
+    /*ADD BECAUSE JS-XSLX */
+  node: {
+      fs: "empty"
+  },
+    externals: [
+        {
+            './cptable': 'var cptable'
+        }
+    ],
+  // externals: [
+  //     { 
+  //      "./cptable": "var cptable",  
+  //       "./jszip": "./jszip" 
+  //     }
+  // ],
   target: _.target
 }

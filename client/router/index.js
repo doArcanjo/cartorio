@@ -8,6 +8,7 @@ import Counter from '../components/Counter'
 Vue.use(Router)
 
 export default new Router({
+  // mode: 'history',// no hashbangs #
   mode: 'hash',
   routes: [
     {

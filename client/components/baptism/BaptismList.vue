@@ -3,6 +3,7 @@
 
   <div @click="$store.dispatch('loadBaptismsLocalDummy')">Carregar Baptismos</div>
 <div>
+<h2>LAnguage {{localStorage.lang}}</h2>  
 <h2 v-if='hasBaptisms'>Has Baptisms</h2>  
 <h2 v-else>There are no Baptisms</h2>  
 <h1>File load and save</h1>
@@ -26,7 +27,11 @@
         </thead>
         <tbody>
           <tr v-for="singleBaptism in getBaptisms">
-            <td><router-link :to="{ path: '/baptisms/'+singleBaptism.n_inscricao}">{{singleBaptism.nome}}</router-link></td>
+            <td>
+            <a href="" @click.prevent='navigateLink(singleBaptism)'>
+                {{singleBaptism.nome}}
+              </a>
+              <!-- <router-link :to="{ path: '/baptisms/'+singleBaptism.n_inscricao}">{{singleBaptism.nome}}</router-link></td> -->
             <td>{{singleBaptism.data_bapt}}</td>
             <td>{{singleBaptism.data_n}}</td>
             <td class="is-icon">
@@ -42,15 +47,17 @@
               <a href="" @click.prevent='selectSingleBaptism(singleBaptism)'>
                 <i class="fa fa-edit"></i>
               </a>
-              <a href="#" @click.prevent="removeBrewery(brewery)">
+              <a href="#" @click.prevent="navigateLink(singleBaptism)">
                 <i class="fa fa-trash"></i>
               </a>
             </td>
           </tr>
         </tbody>
       </table>
-      <modal :selected='selected'>yoo</modal>
-    <pre>{{Baptisms2Json}}</pre>
+      <!-- <modal :selected='selected'>yoo</modal> -->
+    <pre>Baptisms in Local Storage</pre>
+    <pre>{{BaptismsOnLocalStorage}}</pre>
+    <!-- <pre>{{Baptisms2Json}}</pre> -->
     <hr>
   </div>
   <!-- End page -->
@@ -58,11 +65,16 @@
 </template>
 
 <script>
-var BaptismsJson = require ('../../assets/data/baptismos2006.json'); 
 import { mapActions,mapGetters } from 'vuex'
 import Modal from '../layout/Modal'
 export default{
 	name: 'BaptismListComponent',
+  created: function() {
+      console.log('this.localStorage.lang ',this.localStorage.lang )
+      this.localStorage.lang = "other value"; 
+      // will react on the view and on real localStorage.
+      console.log('this.localStorage.lang ',this.localStorage.lang )
+  },
 	components: {Modal},
   methods:{
     ...mapActions({
@@ -76,38 +88,47 @@ export default{
         return;
       this.createInput(files[0]);
     },
-     createInput(file) {
-            var reader = new FileReader();
-            var vm = this;
-            reader.onload = (e) => {
+    createInput(file) {
+        var reader = new FileReader();
+        var vm = this;
+        reader.onload = (e) => {
 
-              vm.fileinput = reader.result;
-              // console.log('data:',vm.fileinput);
-             
-              this.LoadBaptisms({data:vm.fileinput})
-
-            }
-            reader.readAsText(file);
-        },
+          vm.fileinput = reader.result;
+          // console.log('data:',vm.fileinput);
+          this.LoadBaptisms({data:vm.fileinput})
+          this.localStorage.baptisms = vm.fileinput;
+        }
+        reader.readAsText(file);
+    },
     removeImage: function (e) {
       this.image = '';
     },
     saveFile() {
       console.log('saveFile using ALasQL');
-      alasql('SELECT * INTO XLSX("myfile.xlsx",{headers:true}) FROM ?',[this.getBaptisms]);
+      alasql('SELECT * INTO CSV("myfile.csv",{headers:true}) FROM ?',[this.getBaptisms]);
+    },
+    navigateLink(link) {
+      // console.log('link',link);
+      this.selectSingleBaptism(link)
+      this.$router.push('/baptisms/'+link.n_inscricao)
+      // this.$router.go({ query: : '/baptisms'})
+      // this.$router.go('/')
+      // ({ name: 'baptisms', params: { id: 123 }})
     }
   },
   computed:{
     ...mapGetters({
       getBaptisms:'getBaptisms',
-      hasBaptisms:'hasBaptisms'
+      hasBaptisms:'hasBaptisms',
+      getBaptismsLocalStorage:'getBaptismsLocalStorage'
     }),
 		Baptisms2Json(){
-      console.log('Baptisms2Json',this.$store.state.baptisms);
-			return this.$store.state.baptisms.list;
-		},
-		Baptisms1Json(){
-			return BaptismsJson;
+      // console.log('Baptisms2Json',this.$store.state.baptisms);
+      return this.$store.state.baptisms.list;
+    },
+    BaptismsOnLocalStorage(){
+      // console.log('Baptisms2Json',this.$store.state.baptisms);
+			return this.getBaptismsLocalStorage;
 		}
 	},
 	data(){

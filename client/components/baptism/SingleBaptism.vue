@@ -2,7 +2,12 @@
   <div class="page">
   <div class="well">
 	<div @click="$store.dispatch('loadBaptismsLocalDummy')">Carregar Baptismos</div>
-    <b><h2>Baptismos</h2></b>
+	<ol class="breadcrumb">
+	  <li class="breadcrumb-item"><a href="/">Incio</a></li>
+	  <li class="breadcrumb-item" @click.prevent="goBack()"><a href="/baptisms">Baptismos</a></li>
+	  <li class="breadcrumb-item active">Data</li>
+	</ol>
+    <b><h2>Baptismo</h2></b>
     <hr>
     <baptism-header some-prop="Someproperty1" :SingleBaptismData="SingleBaptism"></baptism-header> 
  
@@ -36,41 +41,35 @@ import PersonalDataBaptism from './PersonalDataBaptism';
 import GrandfatherGodfatherBaptism from './GrandfatherGodfatherBaptism';
 import { mapActions,mapGetters } from 'vuex'
 
-var SingleBaptism = require ('../../assets/data/single-baptism.json'); 
+// var SingleBaptismDummy = require ('../../assets/data/single-baptism.json'); 
 export default{
 	name: 'SingleBaptismComponent',
-	 components: { datetime,BaptismHeader, PersonalDataBaptism,GrandfatherGodfatherBaptism },
+	components: { datetime,
+		BaptismHeader,
+		PersonalDataBaptism,
+		GrandfatherGodfatherBaptism 
+	},
 	data(){
-		var SingleBaptism={};
-		return {SingleBaptism:SingleBaptism};
-	}, 
+		return {SingleBaptism:{}};
+	},
+	mounted: function () {
+	  this.$nextTick(function () {
+	  })
+	},
 	methods:{
 		saveBaptismData(){
 			console.log("SingleBaptism.avo_paterno:",this.SingleBaptism.avo_paterno)
 			console.log("SingleBaptism.avo_paterna:",this.SingleBaptism.avo_paterna)
+		},
+		goBack(){
+			this.$router.go('-1')
 		}
 	},
-	route: {
-	    data ({ to }) {
-	    	console.log("@ ROUTE",to.params.id)
-		  document.title = 'Profile: ' + to.params.id + ' | Vue.js HN Clone'
-	      return {
-	        user: store.fetchUser(to.params.id)
-	      }
-	  	}
-  	},
 	computed: {
 	 ...mapGetters({
-      getBaptism:'getBaptism'
+      getBaptism:'getBaptism',
+      SingleBaptism:'getLastSelectedBaptism'
     }),
-	SingleBaptism () {
-		console.log("this.$route.params.id",this.$route.params.id);
-		console.log("this.$route.params.id",this);
-	 // return this.$store.state.baptisms.list[2]
-		return this.getBaptism(this.$route.params.id);
-	 // return getBaptism(this.$route.params.id)
-	 // return this.getBaptism();
-	},
     fullName: function () {
       return this.nome + ' ' + this.paroquia_bapt
     }

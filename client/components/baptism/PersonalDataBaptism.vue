@@ -191,10 +191,9 @@
 	export default {
 		name:'PersonalDataBaptismComponent',
 		compiled(){
-			console.log("Loaded compiled")
+			console.log("Loaded compiled PersonalDataBaptismComponent")
 		},
 		data()	{
-			console.log("Loaded")
 			return {};
 		},
 		props:{
