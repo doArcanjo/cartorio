@@ -31,6 +31,7 @@
 
   <!-- End page -->
 	<button @click="saveBaptismData()">Guardar Baptismo</button>
+	<button @click="SingleBaptismReset()">Anular alterações</button>
   </div>
 </template>
 
@@ -41,7 +42,6 @@ import PersonalDataBaptism from './PersonalDataBaptism';
 import GrandfatherGodfatherBaptism from './GrandfatherGodfatherBaptism';
 import { mapActions,mapGetters } from 'vuex'
 
-// var SingleBaptismDummy = require ('../../assets/data/single-baptism.json'); 
 export default{
 	name: 'SingleBaptismComponent',
 	components: { datetime,
@@ -50,10 +50,19 @@ export default{
 		GrandfatherGodfatherBaptism 
 	},
 	data(){
+		console.log('DATA @', this.name)
 		return {SingleBaptism:{}};
 	},
+	ready() {
+		console.log("READY ")
+		console.log("READY ",this.getLastSelectedBaptism)
+	},
+
 	mounted: function () {
 	  this.$nextTick(function () {
+	  	console.log("Mounted ")
+	  	this.SingleBaptism=JSON.parse(JSON.stringify(this.getLastSelectedBaptism))
+		console.log("Mounted ",this.getLastSelectedBaptism)
 	  })
 	},
 	methods:{
@@ -63,15 +72,26 @@ export default{
 		},
 		goBack(){
 			this.$router.go('-1')
-		}
+		},
+	    SingleBaptismReset(){
+	    	console.log('Reset Module');
+	    	this.$router.go('0')
+	       this.SingleBaptism
+
+	    }
 	},
 	computed: {
 	 ...mapGetters({
       getBaptism:'getBaptism',
-      SingleBaptism:'getLastSelectedBaptism'
+      getLastSelectedBaptism:'getLastSelectedBaptism'
     }),
-    fullName: function () {
-      return this.nome + ' ' + this.paroquia_bapt
+    SingleBaptisma: function () {
+      // makes a copy	
+      this.SingleBaptism=JSON.parse(JSON.stringify(this.getLastSelectedBaptism))
+
+      return JSON.parse(JSON.stringify(this.getLastSelectedBaptism))
+      // sends the real one : changes will be done 
+      return this.getLastSelectedBaptism
     }
   }
 

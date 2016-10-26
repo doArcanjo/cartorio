@@ -3,14 +3,14 @@
 
   <div @click="$store.dispatch('loadBaptismsLocalDummy')">Carregar Baptismos</div>
 <div>
-<h2>Language {{localStorage.lang}}</h2>  
+<!-- <h2>Language {{localStorage.lang}}</h2>   -->
 <h2 v-if='hasBaptisms'>Has Baptisms</h2>  
 <h2 v-else>There are no Baptisms</h2>  
 <h1>File load and save</h1>
 <p>Upload file here</p>
 <input id="readfile" type="file" @change="loadFile"/>
 <p>Save file here:</p>
-<button @click="saveFile">Save file</button>
+<button @click="saveFileCSV('baptismos',getBaptisms)">Save file</button>
 <div id="res"></div>
 </div> 
   <div class="well">
@@ -67,6 +67,7 @@
 <script>
 import { mapActions,mapGetters } from 'vuex'
 import Modal from '../layout/Modal'
+import filemixins from '../mixins/fileLoader'
 export default{
 	name: 'BaptismListComponent',
   created: function() {
@@ -76,42 +77,25 @@ export default{
       // // will react on the view and on real localStorage.
       // console.log('this.localStorage.lang ',this.localStorage.lang )
   },
+  mixins: [filemixins],
 	components: {Modal},
   methods:{
     ...mapActions({
       LoadBaptisms:'loadBaptismsLocal',
       selectSingleBaptism:'selectSingleBaptism'
     }),
-    loadFile(e){
-      // console.log('loadFile',e);
-      var files = e.target.files || e.dataTransfer.files;
-      if (!files.length)
-        return;
-      this.createInput(files[0]);
-    },
-    createInput(file) {
-        var reader = new FileReader();
-        var vm = this;
-        reader.onload = (e) => {
-
-          vm.fileinput = reader.result;
-          // console.log('data:',vm.fileinput);
-          //this.gogo()
-          this.LoadBaptisms({data:vm.fileinput})
-        }
-        reader.readAsText(file);
-    },
-    removeImage: function (e) {
-      this.image = '';
-    },
-    saveFile() {
-      console.log('saveFile using ALasQL');
-      alasql('SELECT * INTO CSV("myfile.csv",{headers:true}) FROM ?',[this.getBaptisms]);
+    /* This method overides the 'LoadData' Mixin method */
+    LoadData(data){
+      this.LoadBaptisms(data)
     },
     navigateLink(link) {
       // console.log('link',link);
-      this.selectSingleBaptism(link)
-      this.$router.push('/baptisms/'+link.n_inscricao)
+      this.selectSingleBaptism(link).then(() => {
+  // ...
+        this.$router.push('/baptisms/'+link.n_inscricao)
+      })
+      this.$nextTick(function () {
+       }) 
       // this.$router.go({ query: : '/baptisms'})
       // this.$router.go('/')
       // ({ name: 'baptisms', params: { id: 123 }})

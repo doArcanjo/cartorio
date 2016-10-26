@@ -1,12 +1,30 @@
-global.alasql=require('../../assets/vendor/alasql.min.v3.2.js');
+export default {
+  methods:{  
+    loadFile(e){
+      // console.log('loadFile',e);
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length)
+        return;
+      this.createInput(files[0]);
+    },
+    createInput(file) {
+        var reader = new FileReader();
+        var vm = this;
+        reader.onload = (e) => {
 
-var data = [{a:1,b:1,c:1},{a:1,b:2,c:1},{a:1,b:3,c:1}, {a:2,b:1,c:1}];
-var res = alasql('SELECT a, COUNT(*) AS b FROM ? GROUP BY a',[data]);
-console.log("alasql",res);
-
-// window['xlsx.js']=require('xlsx');
-// import XLSX  from 'xlsx';
- // require('../assets/vendor/js-xlsx/dist/xlsx.core.min.js');
-
-// xlsx = require('../assets/vendor/xslx.core.full.min.js');
-// xlsx = require('../assets/vendor/xslx.core.min.js');
+          vm.fileinput = reader.result;
+          // console.log('data:',vm.fileinput);
+          this.LoadData({data:vm.fileinput})
+        }
+        reader.readAsText(file);
+    },
+    LoadData(data) {
+      console.error(`'LoadData' is coming from fileLoader (mixin) :
+        Implement 'LoadData' method in the component`,data);
+    },
+    saveFileCSV(filename,data) {
+      // console.log('saveFile into CSV in FileLoader Mixin using ALasQL');
+      alasql(`SELECT * INTO CSV("${filename}.csv",{headers:true}) FROM ?`,[data]);
+    }
+  }
+}

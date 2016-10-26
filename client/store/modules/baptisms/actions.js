@@ -28,10 +28,13 @@ export function loadBaptismsLocal({commit},payload){
 }
 
 export function selectSingleBaptism({commit},payload){
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-        console.log('@actions!  selectSingleBaptism!',payload)
+      console.log('@actions!  selectSingleBaptism!',payload)
       commit('SETBAPTISM',payload)
-    }, 200)
+      resolve();
+    }, 1)
+  })
     
 }
 
