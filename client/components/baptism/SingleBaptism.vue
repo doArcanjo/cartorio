@@ -7,8 +7,8 @@
 	  <li class="breadcrumb-item" @click.prevent="goBack()"><a href="/baptisms">Baptismos</a></li>
 	  <li class="breadcrumb-item active">Data</li>
 	</ol>
-    <b><h2>Baptismo</h2></b>
-    <hr>
+    <!-- <b><h2>Baptismo</h2></b>
+    <hr> -->
     <baptism-header some-prop="Someproperty1" :SingleBaptismData="SingleBaptism"></baptism-header> 
  
 <!-- End of Well -->    
@@ -97,3 +97,5 @@ export default{
 
 }
 </script>
+<style>
+</style>

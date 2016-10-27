@@ -16,6 +16,11 @@ import _ from 'lodash'
   /*background: radial-gradient(circle, black, white);*/
   background: linear-gradient(black, white);
 }
+label{
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 10px;
+}
 code {
   background-color: #f0f0f0;
   padding: 3px 5px;

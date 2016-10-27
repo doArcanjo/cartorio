@@ -10,7 +10,8 @@
 <p>Upload file here</p>
 <input id="readfile" type="file" @change="loadFile"/>
 <p>Save file here:</p>
-<button @click="saveFileCSV('baptismos',getBaptisms)">Save file</button>
+<button @click="saveFileCSV('baptismos',getBaptisms)">Save file CSV</button>
+<button @click="saveFileJSON('baptismos',getBaptisms)">Save file JSON</button>
 <div id="res"></div>
 </div> 
   <div class="well">

@@ -25,6 +25,10 @@ export default {
     saveFileCSV(filename,data) {
       // console.log('saveFile into CSV in FileLoader Mixin using ALasQL');
       alasql(`SELECT * INTO CSV("${filename}.csv",{headers:true}) FROM ?`,[data]);
+    },
+    saveFileJSON(filename,data) {
+      // console.log('saveFile into CSV in FileLoader Mixin using ALasQL');
+      alasql(`SELECT * INTO JSON("${filename}.json") FROM ?`,[data]);
     }
   }
 }

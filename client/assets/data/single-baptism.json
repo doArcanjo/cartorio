@@ -45,7 +45,7 @@
     "concelho_r":"#4 concelho de residencia",
     "observacoes":"#2 observacoes"
 	},
-	"ficha":"",
+    "ficha":"",
     "familia":"",
     "autorizacao":"",
     "data_bapt_long":"",
@@ -58,5 +58,11 @@
     "c_postal_r":"",
     "freguesia_r":"",
     "concelho_r":"",
-    "observacoes":""
+    "observacoes":"",
+    "ficha_padrinho":"",
+	"profissao_padrinho":"",
+    "representante_padrinho":"",
+    "ficha_madrinha":"",
+    "profissao_madrinha":"",
+    "representante_madrinha":""
 }

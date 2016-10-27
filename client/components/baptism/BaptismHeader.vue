@@ -1,6 +1,5 @@
 <template>
     <div id="BaptismHeaderWrapper">
-        <h3>Avós e Padrinhos</h3>
         <div class="input-group input-group-xs">
           <span class="input-group-addon">N.º Inscrição</span>
           <input type="text" class="form-control">
