@@ -1,0 +1,139 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/06/2016 15:21
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-adam-apple:before { content: "\f100"; }
+.flaticon-alpha-and-omega:before { content: "\f101"; }
+.flaticon-baby-jesus:before { content: "\f102"; }
+.flaticon-big-easter-egg:before { content: "\f103"; }
+.flaticon-bunch-of-grapes:before { content: "\f104"; }
+.flaticon-byzantine-cross:before { content: "\f105"; }
+.flaticon-catholic-nun:before { content: "\f106"; }
+.flaticon-catholic-pope:before { content: "\f107"; }
+.flaticon-christian-anchor:before { content: "\f108"; }
+.flaticon-christian-angel:before { content: "\f109"; }
+.flaticon-christian-baptism:before { content: "\f10a"; }
+.flaticon-christian-butterfly:before { content: "\f10b"; }
+.flaticon-christian-chalice:before { content: "\f10c"; }
+.flaticon-christian-church:before { content: "\f10d"; }
+.flaticon-christian-coffin:before { content: "\f10e"; }
+.flaticon-christian-cross:before { content: "\f10f"; }
+.flaticon-christian-lamb:before { content: "\f110"; }
+.flaticon-christian-pearl:before { content: "\f111"; }
+.flaticon-christian-pelican:before { content: "\f112"; }
+.flaticon-christian-rose:before { content: "\f113"; }
+.flaticon-christian-saint:before { content: "\f114"; }
+.flaticon-christian-sun:before { content: "\f115"; }
+.flaticon-church-bell:before { content: "\f116"; }
+.flaticon-cross-and-crown:before { content: "\f117"; }
+.flaticon-cross-nails:before { content: "\f118"; }
+.flaticon-crown-of-thorns:before { content: "\f119"; }
+.flaticon-eye-of-god:before { content: "\f11a"; }
+.flaticon-fet-washing:before { content: "\f11b"; }
+.flaticon-graded-cross:before { content: "\f11c"; }
+.flaticon-hand-from-heaven:before { content: "\f11d"; }
+.flaticon-holy-bible:before { content: "\f11e"; }
+.flaticon-holy-ghost:before { content: "\f11f"; }
+.flaticon-ichthys:before { content: "\f120"; }
+.flaticon-keys-crossed:before { content: "\f121"; }
+.flaticon-latin-hand:before { content: "\f122"; }
+.flaticon-loaf-of-bread:before { content: "\f123"; }
+.flaticon-necklace-cross:before { content: "\f124"; }
+.flaticon-noah-ark:before { content: "\f125"; }
+.flaticon-palm-leaf:before { content: "\f126"; }
+.flaticon-praying-hands:before { content: "\f127"; }
+.flaticon-priest-at-the-pulpit:before { content: "\f128"; }
+.flaticon-quatrefoil:before { content: "\f129"; }
+.flaticon-rosary-for-praying:before { content: "\f12a"; }
+.flaticon-sacred-heart:before { content: "\f12b"; }
+.flaticon-scapulars:before { content: "\f12c"; }
+.flaticon-stigmata:before { content: "\f12d"; }
+.flaticon-ten-commandment:before { content: "\f12e"; }
+.flaticon-the-good-shepherd:before { content: "\f12f"; }
+.flaticon-three-candles:before { content: "\f130"; }
+.flaticon-wedding-rings:before { content: "\f131"; }
+    
+    $font-Flaticon-adam-apple: "\f100";
+    $font-Flaticon-alpha-and-omega: "\f101";
+    $font-Flaticon-baby-jesus: "\f102";
+    $font-Flaticon-big-easter-egg: "\f103";
+    $font-Flaticon-bunch-of-grapes: "\f104";
+    $font-Flaticon-byzantine-cross: "\f105";
+    $font-Flaticon-catholic-nun: "\f106";
+    $font-Flaticon-catholic-pope: "\f107";
+    $font-Flaticon-christian-anchor: "\f108";
+    $font-Flaticon-christian-angel: "\f109";
+    $font-Flaticon-christian-baptism: "\f10a";
+    $font-Flaticon-christian-butterfly: "\f10b";
+    $font-Flaticon-christian-chalice: "\f10c";
+    $font-Flaticon-christian-church: "\f10d";
+    $font-Flaticon-christian-coffin: "\f10e";
+    $font-Flaticon-christian-cross: "\f10f";
+    $font-Flaticon-christian-lamb: "\f110";
+    $font-Flaticon-christian-pearl: "\f111";
+    $font-Flaticon-christian-pelican: "\f112";
+    $font-Flaticon-christian-rose: "\f113";
+    $font-Flaticon-christian-saint: "\f114";
+    $font-Flaticon-christian-sun: "\f115";
+    $font-Flaticon-church-bell: "\f116";
+    $font-Flaticon-cross-and-crown: "\f117";
+    $font-Flaticon-cross-nails: "\f118";
+    $font-Flaticon-crown-of-thorns: "\f119";
+    $font-Flaticon-eye-of-god: "\f11a";
+    $font-Flaticon-fet-washing: "\f11b";
+    $font-Flaticon-graded-cross: "\f11c";
+    $font-Flaticon-hand-from-heaven: "\f11d";
+    $font-Flaticon-holy-bible: "\f11e";
+    $font-Flaticon-holy-ghost: "\f11f";
+    $font-Flaticon-ichthys: "\f120";
+    $font-Flaticon-keys-crossed: "\f121";
+    $font-Flaticon-latin-hand: "\f122";
+    $font-Flaticon-loaf-of-bread: "\f123";
+    $font-Flaticon-necklace-cross: "\f124";
+    $font-Flaticon-noah-ark: "\f125";
+    $font-Flaticon-palm-leaf: "\f126";
+    $font-Flaticon-praying-hands: "\f127";
+    $font-Flaticon-priest-at-the-pulpit: "\f128";
+    $font-Flaticon-quatrefoil: "\f129";
+    $font-Flaticon-rosary-for-praying: "\f12a";
+    $font-Flaticon-sacred-heart: "\f12b";
+    $font-Flaticon-scapulars: "\f12c";
+    $font-Flaticon-stigmata: "\f12d";
+    $font-Flaticon-ten-commandment: "\f12e";
+    $font-Flaticon-the-good-shepherd: "\f12f";
+    $font-Flaticon-three-candles: "\f130";
+    $font-Flaticon-wedding-rings: "\f131";

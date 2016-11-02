@@ -2,7 +2,7 @@
     <div id="BaptismHeaderWrapper">
         <div class="input-group input-group-xs">
           <span class="input-group-addon">N.º Inscrição</span>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" disabled v-model="SingleBaptismData.n_inscricao">
            <span class="input-group-addon">Ano</span>
           <input type="text" class="form-control" v-model="SingleBaptismData.ano">
           <span class="input-group-addon">Data Inscrição</span>

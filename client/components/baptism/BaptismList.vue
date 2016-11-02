@@ -29,10 +29,10 @@
         <tbody>
           <tr v-for="singleBaptism in getBaptisms">
             <td>
-            <a href="" @click.prevent='navigateLink(singleBaptism)'>
+            <!-- <a href="" @click.prevent='navigateLink(singleBaptism)'>
                 {{singleBaptism.nome}}
-              </a>
-              <!-- <router-link :to="{ path: '/baptisms/'+singleBaptism.n_inscricao}">{{singleBaptism.nome}}</router-link></td> -->
+              </a> -->
+              <router-link :to="{ path: '/baptisms/'+singleBaptism.n_inscricao}">{{singleBaptism.nome}}</router-link></td>
             <td>{{singleBaptism.data_bapt}}</td>
             <td>{{singleBaptism.data_n}}</td>
             <td class="is-icon">

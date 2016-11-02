@@ -1,15 +1,41 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <navbar></navbar>
+    <transition name="slide-right">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 import alasqltest from './mixins/alasqlTest'
+import Navbar from './layout/Navbar'
 import _ from 'lodash'
+export default {
+  components: {
+   Navbar
+  }
+}
 </script>
 <style src='../assets/css/style.css'></style>
+<!-- Christian icons -->
+<style src='../assets/font/flaticon.css'></style>
 <style>
+
+/*Christian icons : in footer is the license needed for the usage */
+/* all flat icons inside a thumbnail  will be bigger*/
+
+
+/*.my-small-icon > [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-size: 2em;
+  background-color: DodgerBlue;
+}*/
+
+.my-big-icon > [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-size: 8em;
+}
 
 .page {
   text-align: center;

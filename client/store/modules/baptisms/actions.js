@@ -38,10 +38,32 @@ export function selectSingleBaptism({commit},payload){
     
 }
 
-export function getSingleBaptism({commit},payload){
+export function updateSingleBaptism({commit, state},payload){
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-        console.log('@actions!  getBaptism!',payload)
-      commit('GETBAPTISM',payload)
-    }, 200)
+      console.log('@actions!  updateSingleBaptism!',payload)
+      console.log('@actions!  commit!',state)
+      const oldItem = state.list.find(bapt => bapt.n_inscricao == payload.n_inscricao)
+      console.log("baptism found:",oldItem)
+
+      // console.log('@actions!  updateSingleBaptism payload.data!',payload.data)
+      // commit('UPDATEBAPTISM',payload)
+      commit('UPDATEBAPTISM',{oldItem:oldItem,newItem:payload})
+
+      resolve();
+    }, 1)
+  })
     
+}
+
+export function getSingleBaptism({commit, state},payload){
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log('@actions!  getSingleBaptism!',payload)
+        const baptism = state.list.find(bapt => bapt.n_inscricao == payload.n_inscricao)
+        console.log("@actions!  getSingleBaptism! baptism found",baptism)
+        return resolve(baptism);
+      // commit('GETBAPTISM',payload)
+    }, 1)
+    })
 }
