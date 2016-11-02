@@ -1,6 +1,7 @@
-var data = [{a:1,b:1,c:1},{a:1,b:2,c:1},{a:1,b:3,c:1}, {a:2,b:1,c:1}];
-var res = alasql('SELECT a, COUNT(*) AS b FROM ? GROUP BY a',[data]);
-console.log("alasql",res);
+global.alasql=require('../../assets/vendor/alasql.min.v3.3.js');
+// global.LocalStorage=require('./LocalStorage.js');
+require('./LocalStorage.js');
+
 
 // window['xlsx.js']=require('xlsx');
 // import XLSX  from 'xlsx';

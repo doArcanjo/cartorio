@@ -8,9 +8,11 @@
 </template>
 
 <script>
-import alasqltest from './mixins/alasqlTest'
+import dependencies from './mixins/dependencies'
+import alasqlTest from './mixins/alasqlTest'
+
 import Navbar from './layout/Navbar'
-import _ from 'lodash'
+// import _ from 'lodash'
 export default {
   components: {
    Navbar

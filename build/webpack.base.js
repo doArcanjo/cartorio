@@ -3,6 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const IgnorePlugin =  require("webpack").IgnorePlugin;
+
 const config = require('./config')
 const _ = require('./utils')
 
@@ -63,7 +64,9 @@ module.exports = {
       template: __dirname + '/index.html',
       filename: _.outputIndexPath
     })
-
+   
+    
+   
     //alasql + vertx
     // ,new IgnorePlugin(/(^fs$|cptable|vertx|jszip|xlsx|xls|^es6-promise$|^net$|^tls$|^forever-agent$|^tough-cookie$|^path$)/)
    // ,new IgnorePlugin(/(^fs$|^es6-promise$|^net$|^tls$|^forever-agent$|^tough-cookie$|^path$)/)

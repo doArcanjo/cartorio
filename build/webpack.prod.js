@@ -3,6 +3,7 @@ const exec = require('child_process').execSync
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const base = require('./webpack.base')
 const pkg = require('../package')
 const _ = require('./utils')
@@ -45,7 +46,8 @@ base.plugins.push(
   new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
     filename: 'vendor.[chunkhash:8].js'
-  })
+  }),
+  new BundleAnalyzerPlugin()
 )
 
 // extrac css in standalone .css files

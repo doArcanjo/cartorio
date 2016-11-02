@@ -12,7 +12,6 @@
   "author": "Paroquia Costa Caparica PC 1 <paroquialocal@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.16.4",
     "store": "^1.3.20",
     "vue": "^2.0.2",
     "vue-datetimepicker": "0.0.3",
@@ -45,6 +44,7 @@
     "style-loader": "^0.13.1",
     "vue-loader": "^9.3.2",
     "webpack": "2.1.0-beta.22",
+    "webpack-bundle-analyzer": "^1.4.0",
     "webpack-dev-middleware": "^1.8.1",
     "webpack-hot-middleware": "^2.12.2"
   }
