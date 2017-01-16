@@ -11,7 +11,7 @@
   },
   "author": "Paroquia Costa Caparica PC 1 <paroquialocal@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "dependencies_old": {
     "store": "^1.3.20",
     "vue": "^2.0.2",
     "vue-datetimepicker": "0.0.3",
@@ -20,13 +20,28 @@
     "vuex-persistedstate": "^0.3.0",
     "vuex-router-sync": "^3.0.0"
   },
+  "devDependencies_old": {
+    "vue-loader": "^9.3.2"
+  },
+  "dependencies": {
+    "moment": "^2.17.1",
+    "store": "^1.3.20",
+    "vue": "^2.1.8",
+    "vue-datetimepicker": "0.0.3",
+    "vue-loader": "^9.9.5",
+    "vue-router": "^2.0.0",
+    "vue-tables-2": "^0.2.73",
+    "vuex": "^2.1.1",
+    "vuex-persistedstate": "^0.3.0",
+    "vuex-router-sync": "^3.0.0"
+  },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.16.0",
-    "babel-helper-vue-jsx-merge-props": "^2.0.1",
+    "babel-helper-vue-jsx-merge-props": "^2.0.2",
     "babel-loader": "^6.2.4",
-    "babel-plugin-syntax-jsx": "^6.13.0",
-    "babel-plugin-transform-vue-jsx": "^3.1.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.3.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-stage-1": "^6.13.0",
     "cross-env": "^2.0.0",

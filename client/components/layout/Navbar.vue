@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <router-link class="navbar-brand" to="/" >
+        <router-link class="navbar-brand" to="/" exact>
           Inicio
         </router-link>
       </div>
@@ -21,28 +21,46 @@
             active-class="active"
             class="nav-item"
             tag="li"
-          >
+            exact>
             <a>
                <span class="flaticon-christian-baptism"></span>
               Baptismos
             </a>
           </router-link>
-        </ul>
-        <ul class="nav navbar-nav">
           <router-link
-            :to="{ name: 'account.index' }"
+            to="/weddings"
             active-class="active"
             class="nav-item"
-            tag="li"
-          >
+            tag="li">
             <a>
-              Qualquer coisa
+              <span class="flaticon-wedding-rings"></span>
+              Casamentos
+            </a>
+          </router-link>
+          <router-link
+            to="/funerals"
+            active-class="active"
+            class="nav-item"
+            tag="li">
+            <a>
+              <span class="flaticon-christian-coffin"></span>
+              Funerais
+            </a>
+          </router-link>
+          <router-link
+            to="/catechisis"
+            active-class="active"
+            class="nav-item"
+            tag="li">
+            <a>
+              <span class="flaticon-christian-church"></span>
+              Catequese
             </a>
           </router-link>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="#" @click.prevent="logout">
+            <a href="#" @click.prevent="Sair">
               <i class="fa fa-sign-out"></i>
             </a>
           </li>

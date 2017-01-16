@@ -35,7 +35,7 @@
              </div>
              </div>
         </div>
-        <h5>{{someProp}}</h5>
+        <!-- <h5>{{someProp}}</h5> -->
     </div>
 </template>
 <script>

@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import baptisms from './modules/baptisms'
+import weddings from './modules/weddings'
+import funerals from './modules/funerals'
 import Counter from './modules/counter'
 import pluginsLocal from './plugins'
 import {SAVE_TO_LOCAL_STORAGE,BAPTISMS_STORAGE_KEY} from './mutation-types'
@@ -26,8 +28,9 @@ const mutations = {
 const store = new Vuex.Store({
   mutations,
   modules:{
-    baptisms
-    ,
+    baptisms,
+    weddings,
+    funerals,
     Counter
   },
   plugins:[...pluginsLocal,createPersistedState()]

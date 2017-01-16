@@ -67,3 +67,15 @@ export function getSingleBaptism({commit, state},payload){
     }, 1)
     })
 }
+
+export function getSingleItem({commit, state},payload){
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log('Store:: baptisms :: actions :: getSingleItem!',payload)
+        const item = state.list.find(bapt => bapt.n_inscricao == payload.n_inscricao)
+        console.log("Store:: baptisms :: actions :: ITEM found",item)
+        return resolve(item);
+      // commit('GETBAPTISM',payload)
+    }, 1)
+    })
+}

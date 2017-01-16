@@ -47,7 +47,13 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       },
-       { test: /\.json$/, loader: "json-loader" }
+      { test: /\.json$/, loader: "json-loader" },
+      //vue-tables-2
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        exclude: /node_modules(?!\/(vue-tables-2|vue-pagination-2))\//
+      }
       
     ]
   },

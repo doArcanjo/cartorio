@@ -135,10 +135,7 @@
 				  <input type="text" class="form-control" v-model="SingleBaptismData['comigo']">
 			</div>
 		</div>
-		<!-- <div v-for="(value, key) in SingleBaptismData">
-        <input v-model="SingleBaptismData[key]"/>
-    </div> -->
-		<h5>{{someProp}}</h5>
+		<!-- <h5>{{someProp}}</h5> -->
 	<button @click="saveBaptismData()">Guardar Baptismo</button>
 
 	</div>

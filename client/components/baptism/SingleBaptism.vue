@@ -3,7 +3,7 @@
   <div class="well">
 	<div @click="$store.dispatch('loadBaptismsLocalDummy')">Carregar Baptismos</div>
 	<ol class="breadcrumb">
-	  <li class="breadcrumb-item"><a href="/">Incio</a></li>
+	  <li class="breadcrumb-item"><a href="/">Inicio</a></li>
 	  <li class="breadcrumb-item" @click.prevent="goBack()"><a href="/baptisms">Baptismos</a></li>
 	  <li class="breadcrumb-item active">Data</li>
 	</ol>
