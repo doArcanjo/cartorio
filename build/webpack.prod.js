@@ -46,8 +46,8 @@ base.plugins.push(
   new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
     filename: 'vendor.[chunkhash:8].js'
-  }),
-  new BundleAnalyzerPlugin()
+  })
+  //,new BundleAnalyzerPlugin()
 )
 
 // extrac css in standalone .css files

@@ -19,9 +19,9 @@ export default {
   }
 }
 </script>
-<style src='../assets/css/style.css'></style>
+<style lang="css" src='../assets/css/style.css'></style>
 <!-- Christian icons -->
-<style src='../assets/font/flaticon.css'></style>
+<style lang="css" src='../assets/font/flaticon.css'></style>
 <style>
 
 /*Christian icons : in footer is the license needed for the usage */
